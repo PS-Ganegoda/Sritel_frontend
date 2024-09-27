@@ -57,7 +57,7 @@ export default function Signin() {
         <TextBox
           label="Passward"
           name="passward" 
-          placeholder="Enter your username"
+          placeholder="Enter your passward"
         />
             </div>
 
