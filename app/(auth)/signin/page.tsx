@@ -48,7 +48,7 @@ export default function Signin() {
         <div className="w-full lg:w-1/2 p-6 flex flex-col justify-center bg-white">
           <h1 className="text-4xl font-extrabold mb-6  text-[#385A64] text-center">Sign In</h1>
           <form onSubmit={handleSubmit} noValidate>
-            <div className="mb-4">
+            <div className="flex flex-col gap-4">
             <TextBox
           label="Email Address"
           name="email" 
@@ -59,7 +59,7 @@ export default function Signin() {
           name="passward" 
           placeholder="Enter your passward"
         />
-            </div>
+           
 
              
 
@@ -75,7 +75,7 @@ export default function Signin() {
             >
               Sign In
             </Button>
-
+            </div>
             <div className="mt-4 text-start">
               <p className="text-xs">
                 Don't have an account?{" "}
