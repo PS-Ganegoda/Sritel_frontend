@@ -1,7 +1,7 @@
 "use client";
 
 import Button from "@/app/components/Button";
-import Navbar from "@/app/components/Navbar";
+import Navbar from "@/app/components/Navbar1";
 import Image from "next/image";
 import React from "react";
 import getStartedImg from "../../../public/images/getstarted.jpg"; 

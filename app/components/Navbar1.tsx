@@ -47,7 +47,7 @@ export default function Navbar() {
             type="button"
             className="py-2 px-4 text-[#2b4b55] font-semibold bg-transparent border border-[#2b4b55] rounded hover:bg-[#e5a8df] dark:border-white dark:text-white dark:hover:bg-gray-700"
           >
-            Chat
+            Signin
           </button>
         </Link>
 
@@ -56,7 +56,7 @@ export default function Navbar() {
             type="button"
             className="py-2 px-4 text-[#2b4b55] font-semibold bg-transparent border border-[#2b4b55] rounded hover:bg-[#e5a8df] dark:border-white dark:text-white dark:hover:bg-gray-700"
           >
-            Bills
+            Signup
           </button>
         </Link>
       </div>
