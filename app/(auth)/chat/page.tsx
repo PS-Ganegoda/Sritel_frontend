@@ -11,7 +11,6 @@ const ChatPage = () => {
       setMessages(newMessages);
       setInput('');
 
-      // Simulate a customer service response
       setTimeout(() => {
         setMessages([...newMessages, { user: 'Service', text: 'Thank you for your message. How can I assist you further?' }]);
       }, 1000);
@@ -20,8 +19,8 @@ const ChatPage = () => {
 
   return (
     <div className="flex justify-center items-center h-screen py-5 bg-gray-200">
-      <div className="w-1/2 flex flex-col h-full bg-white rounded-lg shadow-md"> {/* Updated background to white */}
-        <header className="bg-[#2b4b55] text-white p-4 text-center text-xl font-semibold rounded-t-lg"> {/* Updated header color */}
+      <div className="w-1/2 flex flex-col h-full bg-white rounded-lg shadow-md"> 
+        <header className="bg-[#2b4b55] text-white p-4 text-center text-xl font-semibold rounded-t-lg"> 
           Customer Service Chat
         </header>
 
@@ -30,7 +29,7 @@ const ChatPage = () => {
             <div key={index} className={`mb-4 ${message.user === 'Customer' ? 'text-right' : 'text-left'}`}>
               <div
                 className={`inline-block p-3 rounded-lg ${
-                  message.user === 'Customer' ? 'bg-[#c96cc3] text-white' : 'bg-[#e5a8df] text-gray-900' // Updated message colors
+                  message.user === 'Customer' ? 'bg-[#c96cc3] text-white' : 'bg-[#e5a8df] text-gray-900' 
                 }`}
               >
                 {message.text}
@@ -50,7 +49,7 @@ const ChatPage = () => {
           />
           <button
             onClick={handleSendMessage}
-            className="bg-[#2b4b55] text-white px-4 py-2 rounded-lg hover:bg-[#c96cc3]" // Updated button color
+            className="bg-[#2b4b55] text-white px-4 py-2 rounded-lg hover:bg-[#c96cc3]" 
           >
             Send
           </button>

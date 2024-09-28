@@ -15,7 +15,6 @@ export default function Navbar() {
       <div className="flex items-center">
         <Image src="/images/sritel-logo.png" alt="Sri Tel Logo" width={50} height={50} />
         <h1 className="ml-4 text-2xl font-bold text-[#c96cc3] dark:text-white">
-          {/* You can add a title or logo text here if needed */}
         </h1>
       </div>
       <div className="flex items-center space-x-4">
@@ -41,7 +40,6 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Updated Nav Links */}
         <Link href="/chat">
           <button
             type="button"

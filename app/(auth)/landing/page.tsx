@@ -1,10 +1,10 @@
 "use client";
 
-import Navbar from "@/app/components/Navbar"; // Updated import path if necessary
+import Navbar from "@/app/components/Navbar";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import getStartedImg from "../../../public/images/getstarted.jpg"; // Ensure the path is correct
+import getStartedImg from "../../../public/images/getstarted.jpg";
 
 export default function LandingPage() {
   return (
