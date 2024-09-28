@@ -27,7 +27,7 @@ export default function PasswardBox({
       >
         {label}
       </label>
-      <div className="relative max-w-xs">
+      <div className="relative w-full">
         <input
           id={name}
           placeholder={placeholder}

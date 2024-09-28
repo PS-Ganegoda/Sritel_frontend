@@ -46,13 +46,14 @@ export default function SignUp() {
         name="password"
         placeholder="Enter your password"
       />
-      
+      <div className="flex justify-start">
           <Button
               type="submit"
-              className="w-[70%] py-2 text-white bg-[#385A64] rounded"
+              className="w-[50%] py-2 text-white bg-[#385A64] rounded "
             >
               Sign Up
             </Button>
+          </div>
           </div>
             
 
