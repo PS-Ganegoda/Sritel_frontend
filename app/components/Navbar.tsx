@@ -49,7 +49,7 @@ export default function Navbar() {
           </button>
         </Link>
 
-        <Link href="/bill">
+        <Link href="/billing">
           <button
             type="button"
             className="py-2 px-4 text-[#2b4b55] font-semibold bg-transparent border border-[#2b4b55] rounded hover:bg-[#e5a8df] dark:border-white dark:text-white dark:hover:bg-gray-700"

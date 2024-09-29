@@ -27,12 +27,7 @@ export default function GetStarted() {
               Get Started
             </Button>
 
-            <Button
-              type="button"
-              className="py-3 px-6 bg-transparent border border-[#0b4b55] text-[#0b4b55] font-semibold rounded-lg hover:bg-[#e5a8df] hover:border-[#2b4b55] dark:border-white dark:text-white dark:hover:bg-gray-700"
-            >
-              Learn More
-            </Button>
+            
           </div>
         </div>
 

@@ -30,7 +30,7 @@ export default function LandingPage() {
          </button>
   </Link>
   
-  <Link href="/bill">
+  <Link href="/billing">
     <button className="py-3 px-6 bg-[#2b4b55] text-white font-semibold rounded-lg hover:bg-[#e5a8df]">
       View Bills
     </button>
