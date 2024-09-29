@@ -6,8 +6,14 @@ import TextBox from "@/app/components/TextBox";
 import Image from "next/image";
 import signupimg from "../../../public/images/signup.jpg";
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Signin() {
+const router = useRouter();
+
+function handlesignin(){
+  router.push("/landing");
+}
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({ username: "", password: "" });
@@ -72,6 +78,7 @@ export default function Signin() {
             <Button
               type="submit"
               className="w-[50%] py-2 text-white bg-[#385A64] rounded"
+              onClick={handlesignin}
             >
               Sign In
             </Button>
