@@ -1,28 +1,25 @@
-// import {Input} from "@nextui-org/react";
+import TextBox from "@/app/components/TextBox";
+import React from "react";
 
-// export default function Doubletext() {
-//   return (
-//     <div className="flex w-full flex-wrap md:flex-nowrap gap-4 rounded ">
-//       <Input type="name" label="First Name"  variant="bordered" />
-//       <Input type="name" label="Last Name"  variant="bordered" />
-//     </div>
-//   );
-// }
-import TextBox from "./TextBox";
+interface DoubletextProps {
+    handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void; // Add handleChange prop
+}
 
-export default function Doubletext() {
+export default function Doubletext({ handleChange }: DoubletextProps) {
     return (
-      <div className="flex w-full flex-wrap md:flex-nowrap gap-4 rounded ">
-      <TextBox
-          label="First Name"
-          name="email" 
-          placeholder="First Name"
-        />
-        <TextBox
-          label="Last Name"
-          name="email" 
-          placeholder="Last Name"
-        />
-      </div>
+        <div className="flex w-full flex-wrap md:flex-nowrap gap-4 rounded">
+            <TextBox
+                label="First Name"
+                name="firstName"
+                placeholder="First Name"
+                handleChange={handleChange} // Pass handleChange
+            />
+            <TextBox
+                label="Last Name"
+                name="lastName"
+                placeholder="Last Name"
+                handleChange={handleChange} // Pass handleChange
+            />
+        </div>
     );
-  }
+}

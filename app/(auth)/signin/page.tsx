@@ -7,34 +7,62 @@ import Image from "next/image";
 import signupimg from "../../../public/images/signup.jpg";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import {baseUrlAUTH} from "@/app/config";
+import {useCookies} from "react-cookie";
 
 export default function Signin() {
-const router = useRouter();
+    const [cookies, setCookie, removeCookie] = useCookies(['cookie-name']);
 
+    const router = useRouter();
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        // console.log(e);
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value,
+        });
+    };
 function handlesignin(){
   router.push("/landing");
 }
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState({ username: "", password: "" });
+    const [formData, setFormData] = useState({
+        username: "",
+        password: ""
+    });
+
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    let formErrors = { username: "", password: "" };
+    console.log(formData);
 
-    if (!username) {
-      formErrors.username = "Username is required.";
-    }
-    if (!password) {
-      formErrors.password = "Password is required.";
-    }
+      const myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
 
-    setErrors(formErrors);
+      const raw = JSON.stringify(formData);
 
-    if (!formErrors.username && !formErrors.password) {
-      console.log("Logging in:", { username, password });
-    }
+      const requestOptions = {
+          method: "POST",
+          headers: myHeaders,
+          body: raw,
+          redirect: "follow"
+      };
+
+      fetch(baseUrlAUTH +"/auth/login", requestOptions)
+          .then((response) => {
+              return response.json()
+          })
+          .then((result) => {
+              console.log(result)
+              if (result.token) {
+
+                  setCookie('jwtToken', result.token, { path: "/" });
+                  handlesignin();
+              }else {
+                  alert(result.message)
+              }
+          })
+          .catch((error) => console.error(error));
+
   };
 
   return (
@@ -47,6 +75,7 @@ function handlesignin(){
             src={signupimg}
             alt="Auth Image"
             className="object-cover w-full h-full"
+
           />
         </div>
 
@@ -57,13 +86,15 @@ function handlesignin(){
             <div className="flex flex-col gap-4">
             <TextBox
           label="Email Address"
-          name="email" 
+          name="username"
           placeholder="Enter your email"
+          handleChange={handleChange}
         />
         <TextBox
-          label="Passward"
-          name="passward" 
+          label="Password"
+          name="password"
           placeholder="Enter your passward"
+          handleChange={handleChange}
         />
            
 
@@ -78,7 +109,7 @@ function handlesignin(){
             <Button
               type="submit"
               className="w-[50%] py-2 text-white bg-[#385A64] rounded"
-              onClick={handlesignin}
+
             >
               Sign In
             </Button>
