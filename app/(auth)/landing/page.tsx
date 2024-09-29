@@ -13,7 +13,7 @@ export default function LandingPage() {
 
       <div className="flex flex-col items-center justify-center flex-grow max-w-7xl mx-auto my-10 p-8 lg:p-16 bg-white dark:bg-gray-800 shadow-lg rounded-lg">
         <h1 className="text-4xl font-extrabold mb-4 text-[#c96cc3] dark:text-[#c96cc3]">
-          Welcome to Sri Tel Ltd!
+          Welcome to Sri Tel Ltd - Sri Care!
         </h1>
         <p className="text-lg mb-8 text-gray-600 dark:text-gray-300 text-center">
           Explore our services and manage your account with ease. Choose an option below:
