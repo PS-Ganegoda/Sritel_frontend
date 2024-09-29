@@ -5,8 +5,14 @@ import Navbar from "@/app/components/Navbar1";
 import Image from "next/image";
 import React from "react";
 import getStartedImg from "../../../public/images/getstarted.jpg"; 
+import { useRouter } from "next/navigation";
+
 
 export default function GetStarted() {
+  const router = useRouter();
+   function getstart(){
+    router.push("/signin")
+   }
   return (
     <div className={`flex flex-col min-h-[98vh] bg-gray-50 dark:bg-gray-900`}>
       <Navbar />
@@ -23,6 +29,7 @@ export default function GetStarted() {
             <Button
               type="button"
               className="py-3 px-6 bg-[#2b4b55] text-white font-semibold rounded-lg hover:bg-[#e5a8df]"
+              onClick={ getstart}
             >
               Get Started
             </Button>
